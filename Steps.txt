@@ -1,0 +1,36 @@
+First We create src folder then create a file in our case app.js
+before installtion Express we have to create package.json file   in terminal command   npm init 
+We can use the express documentation or npmjs site ... for Express  type:  npm i express
+
+sometime error comes: Error: Cannot find module 'D:\Mern_Development\Responsive_Website_ExpressJs\index.js'
+this mean we cannot type nodemon app.js (wrong)  the true one is : nodemon src/app.js 
+
+const port =process.env.port|| 3000   this expression env.port mean agr koi port 3000 chalana chayee tu nei chale ga ye fix hu gya iss website ke lye .... 
+
+then create a public file that contain
+Css folder=> style.Css
+Js  folder => main .js
+public me main file  index.js
+
+After completing the pages about and index and there css statically ...=>
+
+Then to make the file dynamic
+install npm i hbs
+Using hbs as the default view engine requires just one line of code in your app setup. This will render .hbs files when res.render is called.
+
+app.set('view engine', 'hbs');
+To use a different extension (i.e. html) for your template files:
+
+app.set('view engine', 'html');
+app.engine('html', require('hbs').__express);
+
+to use the simple routing in app.js ju phele hum app.snd ke through kar rahe the now we use  
+ app.render(index or about.html)
+
+then we have to change the name of views to any name like template inside create views then create partial folder inside the template
+
+partial folder contains the coponents like navbar code ,header footer which are same so instead of using the cpde again and again we simply use the partial and make a copy of that code and use as many tyme i.e {{>navbar}}
+
+then parial ke components  me changes  nei hu ge so jase hume kesi link ka name change karna raha tu 
+then hume type karna hu ga 
+nodemon src/app -e js,hbs 
