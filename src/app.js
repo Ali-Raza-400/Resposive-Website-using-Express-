@@ -4,7 +4,7 @@ const hbs =require('hbs');
 
 const app = express();
 
-const port = 8000;
+const port =process.env.PORT || 8000;
 const static_Path=path.join(__dirname,'../public')
 const template_path=path.join(__dirname,'../template/views')
 const Partial_path=path.join(__dirname,'../template/partials')
